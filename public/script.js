@@ -58,5 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
     stop.addEventListener('click', stopTimer)
     reset.addEventListener('click', resetTimer);
 
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space') {
+            e.preventDefault(); 
+            if (isRunning) {
+                stopTimer();
+            } else {
+                startTimer();
+            }
+        }
+    });
     updateDisplay();
 });
